@@ -1,6 +1,6 @@
 package org.dk.mbe.services;
 
-public interface IGame {
+public interface IGame{
 	
 	public void winPoint(String playerName);
 

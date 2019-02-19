@@ -2,10 +2,18 @@ package org.dk.mbe.services;
 
 public interface IPlayer {
 	
-	void winPoint();
-	
-	String getName(); //Not really part of a contract
+	String getName(); //Not really part of a behaviour
 
-	int retrieveScore();
+	void winPoint();
+
+	void winGame();
+	
+	int retrieveGameScore();
+	
+	int retrieveSetScore();
+
+	void winTiePoint();
+
+	int retrieveTieScore();
 	
 }

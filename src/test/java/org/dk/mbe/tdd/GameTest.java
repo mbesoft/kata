@@ -5,6 +5,7 @@ import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 
 import org.dk.mbe.domain.Game;
+import org.dk.mbe.domain.TennisFactory;
 import org.dk.mbe.services.IGame;
 import org.junit.Before;
 import org.junit.Test;
@@ -12,7 +13,7 @@ import org.junit.Test;
 public class GameTest {
 	
 	private IGame game;
-	private String player1, player2;	
+	private String player1, player2;
 	
 	@Before
     public void setUp(){

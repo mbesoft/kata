@@ -8,6 +8,10 @@ public class Game implements IGame {
 	private Player player2;
 	private Player gameWinner;
 	private boolean deuceEnabled;
+	
+	public Game() {
+		// TODO Auto-generated constructor stub
+	}
 
 	private Game(String fullname1, String fullname2) {
 		this.player1 = new Player(fullname1);
@@ -37,10 +41,10 @@ public class Game implements IGame {
 			gameWinner = pointWinner;
 			reset();
 			pointWinner.setAdvantageEnabled(false);
-		} else if (pointWinner.retrieveScore() == 40 && opponent.retrieveScore() < 40) {
+		} else if (pointWinner.retrieveGameScore() == 40 && opponent.retrieveGameScore() < 40) {
 			gameWinner = pointWinner;
 			reset();
-		}else if (pointWinner.retrieveScore() == 40 && pointWinner.retrieveScore() == opponent.retrieveScore()) {
+		}else if (pointWinner.retrieveGameScore() == 40 && pointWinner.retrieveGameScore() == opponent.retrieveGameScore()) {
 			pointWinner.setAdvantageEnabled(true);
 		} else {
 			pointWinner.winPoint();
@@ -55,7 +59,7 @@ public class Game implements IGame {
 		} else if (player1.advantageEnabled()) {
 			return "40 - ADV";
 		}
-		return player1.retrieveScore() + " - " + player2.retrieveScore();
+		return player1.retrieveGameScore() + " - " + player2.retrieveGameScore();
 	}
 
 	public void reset() {

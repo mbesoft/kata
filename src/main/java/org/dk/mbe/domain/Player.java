@@ -11,13 +11,44 @@ public class Player implements IPlayer {
 
 	public Player(String fullname) {
 		this.name = fullname;
-		scoreCard = new ScoreCard();
+		this.scoreCard = new ScoreCard();
 	}
 
+	@Override
+	public void winGame() {
+		scoreCard.addGame();
+	}
+	
+	@Override
 	public void winPoint() {
 		scoreCard.addPoint();
 	}
 
+	@Override
+	public int retrieveGameScore() {
+		return scoreCard.getGameScore();
+	}
+
+	public void reset() {
+		hasTheAdvantage = false;
+		scoreCard.reset();
+	}
+
+	@Override
+	public int retrieveSetScore() {
+		return scoreCard.getSetScore();
+	}
+
+	@Override
+	public void winTiePoint() {
+		scoreCard.addTiePoint();
+	}
+
+	@Override
+	public int retrieveTieScore() {
+		return scoreCard.getTieScore();
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -31,12 +62,5 @@ public class Player implements IPlayer {
 
 	}
 
-	public int retrieveScore() {
-		return scoreCard.getGameScore();
-	}
 
-	public void reset() {
-		hasTheAdvantage = false;
-		scoreCard.reset();
-	}
 }
